@@ -15,6 +15,7 @@ namespace dataStructure
             LinkedList.LinkedListClass list = new LinkedList.LinkedListClass();
             Console.WriteLine("1 to create simple linked list");
             Console.WriteLine("2 to swap position");
+            Console.WriteLine("3 to append");
             int select = Convert.ToInt32(Console.ReadLine());
             switch (select)
             {
@@ -29,6 +30,13 @@ namespace dataStructure
                     list.swapValues(30);
                     list.swapValues(70);
                     list.display();
+                    break;
+                case 3:
+                    list.add(56);
+                    list.add(30);
+                    list.add(70);
+                    list.display();
+                    list.Append(select);
                     break;
             }
 

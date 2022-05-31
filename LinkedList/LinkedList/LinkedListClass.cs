@@ -36,20 +36,21 @@ namespace LinkedList
             Console.WriteLine(" Adding values in linked list : {0} ", node.value);
             
         }
-        public void swapValues(int data)
+        public void swapValues(int id)
         {
-           Console.WriteLine(" Swapping of values");
-            Node node = new Node(data);
-            if (head == null)
+           Console.WriteLine(" Replacing position before of values");
+            Node node = new Node(id);
+            if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
-                node.next = head;
+                node.next =this.head;
                 head = node;
             }
-            Console.WriteLine(node.value + "Added");
+          //  Console.WriteLine("After positioning of values :" + head);
+            Console.WriteLine( "Added :" +node.value );
         }
 
         public void display()
@@ -71,6 +72,24 @@ namespace LinkedList
                     currentNode = currentNode.next;
                 }
             }
+        }
+        public void Append(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node position = head;
+                while (position.next != null)
+                {
+                    position = position.next;
+                }
+                position.next = node;
+            }
+            Console.WriteLine("{0} Values Appended in linkedlist", node.value);
         }
     }
 
