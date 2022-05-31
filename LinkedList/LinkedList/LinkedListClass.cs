@@ -36,6 +36,22 @@ namespace LinkedList
             Console.WriteLine(" Adding values in linked list : {0} ", node.value);
             
         }
+        public void swapValues(int data)
+        {
+           Console.WriteLine(" Swapping of values");
+            Node node = new Node(data);
+            if (head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                node.next = head;
+                head = node;
+            }
+            Console.WriteLine(node.value + "Added");
+        }
+
         public void display()
         {
             Console.WriteLine(" Displaying Stored Values in Linked list");
