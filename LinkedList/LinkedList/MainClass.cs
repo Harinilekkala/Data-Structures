@@ -16,6 +16,7 @@ namespace dataStructure
             Console.WriteLine("1 to create simple linked list");
             Console.WriteLine("2 to swap position");
             Console.WriteLine("3 to append");
+            Console.WriteLine("4. insert value between");
             int select = Convert.ToInt32(Console.ReadLine());
             switch (select)
             {
@@ -37,6 +38,16 @@ namespace dataStructure
                     list.add(70);
                     list.display();
                     list.Append(select);
+                    break;
+
+                case 4:
+                    list.add(56);
+                    list.add(70);
+                    Console.WriteLine("Before insert");
+                    list.display();
+                    Console.WriteLine("After insert");
+                    list.insertNodeInbetween(2, 30);
+                    list.display();
                     break;
             }
 

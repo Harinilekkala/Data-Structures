@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace LinkedList
 {
     internal class LinkedListClass
-    
+
     {
-        
+
         internal Node head;
-        
+
         public void add(int id)
         {
-           
+
 
             Node node = new Node(id);
             if (this.head == null)
@@ -27,18 +27,18 @@ namespace LinkedList
                 Node temp = head;
                 while (temp.next != null)
                 {
-                    
+
                     temp = temp.next;
                 }
                 temp.next = node;
             }
-            
+
             Console.WriteLine(" Adding values in linked list : {0} ", node.value);
-            
+
         }
         public void swapValues(int id)
         {
-           Console.WriteLine(" Replacing position before of values");
+            Console.WriteLine(" Replacing position before of values");
             Node node = new Node(id);
             if (this.head == null)
             {
@@ -46,11 +46,11 @@ namespace LinkedList
             }
             else
             {
-                node.next =this.head;
+                node.next = this.head;
                 head = node;
             }
-          //  Console.WriteLine("After positioning of values :" + head);
-            Console.WriteLine( "Added :" +node.value );
+            //  Console.WriteLine("After positioning of values :" + head);
+            Console.WriteLine("Added :" + node.value);
         }
 
         public void display()
@@ -66,9 +66,9 @@ namespace LinkedList
 
                 while (currentNode != null)
                 {
-                    
+
                     Console.WriteLine(currentNode.value);
-                    
+
                     currentNode = currentNode.next;
                 }
             }
@@ -91,9 +91,34 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Values Appended in linkedlist", node.value);
         }
+        public void insertNodeInbetween(int position, int data)
+        {
+            int check = 1;
+            Node newNode = new Node(data);
+            if (position == 1)
+            {
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+                while (position != check)
+                {
+                    check++;
+                    if (position == check)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        break;
+                    }
+
+                    temp = temp.next;
+                }
+            }
+        }
+
     }
-
-
 
 
 }
