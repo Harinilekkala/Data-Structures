@@ -120,7 +120,31 @@ namespace LinkedList
 
         public void removeFirst()
         {
+            if (this.head == null)
+            {
+                Console.WriteLine("List Empty");
+            }
             this.head = this.head.next;
+        }
+        public void removeLastValue()
+        {
+            Node temp = head;
+            if (this.head == null)
+            {
+                Console.WriteLine("List Empty");
+            }
+            if (temp.next == null)
+            {
+                this.head = null;
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
         }
 
     }

@@ -13,11 +13,12 @@ namespace dataStructure
         {
             dataStructure.mainClass run = new dataStructure.mainClass();
             LinkedList.LinkedListClass list = new LinkedList.LinkedListClass();
-            Console.WriteLine("1 to create simple linked list");
-            Console.WriteLine("2 to swap position");
-            Console.WriteLine("3 to append");
+            Console.WriteLine("1. to create simple linked list");
+            Console.WriteLine("2. to swap position");
+            Console.WriteLine("3. to append");
             Console.WriteLine("4. insert value between");
             Console.WriteLine("5. Remove First Value");
+            Console.WriteLine("6. Remove Last VAlue");
             int select = Convert.ToInt32(Console.ReadLine());
             switch (select)
             {
@@ -63,6 +64,17 @@ namespace dataStructure
                     list.display();
                     break;
 
+                case 6:
+                    list.add(56);
+                    list.add(30);
+                    list.add(70);
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("Values Present in List");
+                    list.display();
+                    list.removeLastValue();
+                    Console.WriteLine("After Remove Last Value");
+                    list.display();
+                    break;
             }
 
 
