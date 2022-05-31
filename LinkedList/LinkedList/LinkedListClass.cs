@@ -118,6 +118,11 @@ namespace LinkedList
             }
         }
 
+        public void removeFirst()
+        {
+            this.head = this.head.next;
+        }
+
     }
 
 
